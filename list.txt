@@ -1,0 +1,4 @@
+payload:
+  - '+.btbtt19.com'
+  - '+.jb51.net'
+  - '+.sms-activate.org'
