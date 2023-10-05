@@ -45,3 +45,4 @@ payload:
   - '+.recaptcha.net'
   - '+.msftconnecttest.com'
   - '+.poe.com'
+  - '+.btbtt12.com'
