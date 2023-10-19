@@ -46,3 +46,4 @@ payload:
   - '+.msftconnecttest.com'
   - '+.poe.com'
   - '+.btbtt12.com'
+  - '+.everlook.org'
