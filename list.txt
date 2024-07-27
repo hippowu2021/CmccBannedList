@@ -47,3 +47,4 @@ payload:
   - '+.poe.com'
   - '+.btbtt12.com'
   - '+.everlook.org'
+  - '+.yiso.fun'
