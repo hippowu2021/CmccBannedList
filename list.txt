@@ -48,3 +48,4 @@ payload:
   - '+.btbtt12.com'
   - '+.everlook.org'
   - '+.yiso.fun'
+  - '+.bg3.co'
