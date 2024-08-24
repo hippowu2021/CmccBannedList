@@ -49,3 +49,4 @@ payload:
   - '+.everlook.org'
   - '+.yiso.fun'
   - '+.bg3.co'
+  - '+.booking.com'
