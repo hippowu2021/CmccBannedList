@@ -50,3 +50,6 @@ payload:
   - '+.yiso.fun'
   - '+.bg3.co'
   - '+.booking.com'
+  - '+.xbookcn.net'
+  - '+.ttkan.co'
+  - '+.piaotia.com'
