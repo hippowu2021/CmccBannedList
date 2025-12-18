@@ -39,4 +39,4 @@ payload:
   - '+.ttkan.co'
   - '+.piaotia.com'
   - '+.mhqwe.xyz'
-  - 'cmliussss.com'
+  - '+.cmliussss.com'
