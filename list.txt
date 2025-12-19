@@ -43,3 +43,4 @@ payload:
   - '+.mxshm.top'
   - '+.一分机场.com'
   - '+.mojie.co'
+  - '+.yfjc.xyz'
