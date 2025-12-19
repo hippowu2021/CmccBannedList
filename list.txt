@@ -44,3 +44,4 @@ payload:
   - '+.一分机场.com'
   - '+.mojie.co'
   - '+.yfjc.xyz'
+  - '45.79.77.206'
