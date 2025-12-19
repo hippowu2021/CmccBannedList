@@ -41,3 +41,4 @@ payload:
   - '+.mhqwe.xyz'
   - '+.cmliussss.com'
   - '+.mxshm.top'
+  - '+.一分机场.com'
