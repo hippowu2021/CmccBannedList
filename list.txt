@@ -40,3 +40,4 @@ payload:
   - '+.piaotia.com'
   - '+.mhqwe.xyz'
   - '+.cmliussss.com'
+  - '+.mxshm.top'
