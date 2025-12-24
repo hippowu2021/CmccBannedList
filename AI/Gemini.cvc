@@ -19,3 +19,4 @@ payload:
   - DOMAIN-SUFFIX,deepmind.google
   - DOMAIN-SUFFIX,apis.google.com
   - DOMAIN-SUFFIX,notebooklm.google
+  - DOMAIN-KEYWORD,notebooklm
