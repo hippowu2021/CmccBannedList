@@ -43,3 +43,4 @@ payload:
   - DOMAIN-SUFFIX,generativeai.google
   - DOMAIN-SUFFIX,content-autofill.googleapis.com
   - DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
+  - DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
