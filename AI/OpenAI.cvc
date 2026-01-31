@@ -1,5 +1,15 @@
 payload:
+  # NAME: OpenAI
+  # AUTHOR: Hexon
+  # REPO: https://github.com/Hexon-X/Hex-Clash
+  # UPDATED: 2026-01-24
+  # DOMAIN: 7
+  # DOMAIN-KEYWORD: 1
+  # DOMAIN-SUFFIX: 24
+  # TOTAL: 32
+  # 关键字匹配
   - DOMAIN-KEYWORD,openai
+  # 核心域名
   - DOMAIN,cdn.auth0.com
   - DOMAIN,browser-intake-datadoghq.com
   - DOMAIN,chat.openai.com
@@ -7,6 +17,7 @@ payload:
   - DOMAIN,cdn.oaistatic.com
   - DOMAIN,api-js.mixpanel.com
   - DOMAIN,s.gravatar.com
+  # 域名后缀
   - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,auth0.com
   - DOMAIN-SUFFIX,challenges.cloudflare.com
