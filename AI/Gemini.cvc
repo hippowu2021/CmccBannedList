@@ -1,4 +1,13 @@
 payload:
+  # NAME: Gemini
+  # AUTHOR: Hexon
+  # REPO: https://github.com/Hexon-X/Hex-Clash
+  # UPDATED: 2026-01-24
+  # DOMAIN: 11
+  # DOMAIN-KEYWORD: 3
+  # DOMAIN-SUFFIX: 20
+  # TOTAL: 34
+  # 核心域名
   - DOMAIN,ai.google.dev
   - DOMAIN,alkalimakersuite-pa.clients6.google.com
   - DOMAIN,makersuite.google.com
@@ -10,9 +19,11 @@ payload:
   - DOMAIN,aisandbox-pa.googleapis.com
   - DOMAIN,jnn-pa.googleapis.com
   - DOMAIN,discoveryengine.clients6.google.com
+  # 关键字匹配
   - DOMAIN-KEYWORD,colab
   - DOMAIN-KEYWORD,developerprofiles
   - DOMAIN-KEYWORD,generativelanguage
+  # 域名后缀
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,gemini-pa.googleapis.com
