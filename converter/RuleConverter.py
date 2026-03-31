@@ -101,7 +101,7 @@ def process_task(source_url, repo_dir, sub_dir, base_name, config_data, save_lis
             and os.path.exists(cvc_path)
         ):
             print(f"| SKIP    | {base_name: <14} | 状态: 已是最新")
-            return False
+            return "skipped"
 
         # 2. 下载与转换
         print(f"| UPDATE  | {base_name: <14} | 正在生成...")
@@ -131,19 +131,19 @@ def process_task(source_url, repo_dir, sub_dir, base_name, config_data, save_lis
             f.write("\n".join(cvc_output) + "\n")
 
         config_data["state"][base_name] = current_id
-        return True
+        return "updated"
     except socket.timeout:
         print(f"| ERROR   | {base_name: <14} | 请求超时")
-        return False
+        return "failed"
     except urllib.error.URLError as e:
         if isinstance(e.reason, socket.timeout):
             print(f"| ERROR   | {base_name: <14} | 请求超时")
         else:
             print(f"| ERROR   | {base_name: <14} | 网络错误: {e.reason}")
-        return False
+        return "failed"
     except Exception as e:
         print(f"| ERROR   | {base_name: <14} | {e}")
-        return False
+        return "failed"
 
 
 def main():
@@ -200,16 +200,22 @@ def main():
         print("警告: 配置文件中未定义任何任务。")
         return
 
-    updated_flag = False
+    results = {"updated": [], "skipped": [], "failed": []}
     for url, name, sub, sl in tasks:
-        if process_task(url, repo_dir, sub, name, config, save_list=sl):
-            updated_flag = True
+        status = process_task(url, repo_dir, sub, name, config, save_list=sl)
+        results[status].append(name)
+
+    print("-" * 65)
+    print(
+        f"任务汇总: 成功 {len(results['updated'])} | 跳过 {len(results['skipped'])} | 失败 {len(results['failed'])}"
+    )
+    if results["failed"]:
+        print(f"失败任务: {', '.join(results['failed'])}")
 
     # 提交改动
-    if updated_flag:
+    if results["updated"]:
         save_config(config_file, config)
         if git_conf["enabled"]:
-            print("-" * 65)
             print("检测到本地更新，准备提交...")
             run_git_command(repo_dir, ["add", "."], proxy_url, git_timeout)
             msg = f"{git_conf['commit_message']} @ {time.strftime('%Y-%m-%d %H:%M:%S')}"
@@ -222,8 +228,9 @@ def main():
                     print("SUCCESS: 远程仓库同步完成。")
                 else:
                     print(f"PUSH ERROR: {log}")
+    elif not results["skipped"]:
+        print("ERROR: 所有任务均失败，未提交任何更改。")
     else:
-        print("-" * 65)
         print("无变动：本地与远程均已是最新版本。")
     print("=" * 65)
 
