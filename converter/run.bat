@@ -1,0 +1,2 @@
+python RuleConverter.py
+pause
