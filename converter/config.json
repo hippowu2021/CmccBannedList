@@ -45,7 +45,7 @@
     ],
     "state": {
         "Gemini": "\"3978642fdebcad605453bf8b53a444766ba16734c0c8ad9f79e0decb10338928\"",
-        "OpenAI": "",
+        "OpenAI": "\"7f87eec9ad880fc85a5f1bd41d7e587be4d37cb0a440eddc1833eb946987ed9f\"",
         "CmccBannedList": "\"83328aaa4c9e62cc19ae4789a3e2c6ccd222c67f189c4b254aa226b5eebfcc86\""
     }
 }
