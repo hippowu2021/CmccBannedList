@@ -1,7 +1,7 @@
 """
 Project: Rule-Converter
-Version: V0.05 (Proxy Complete)
-Description: 增加全局代理支持，urllib下载与Git操作均可通过本地代理进行。
+Version: V0.06 (Configurable Tasks)
+Description: 任务列表由硬编码迁移至配置文件，支持动态增删改任务。
 """
 
 import urllib.request
@@ -184,27 +184,21 @@ def main():
             print(f"同步提示: {log.strip()}")
         print("-" * 65)
 
-    # 任务清单
-    tasks = [
-        (
-            "https://raw.githubusercontent.com/Hexon-X/Hex-Clash/refs/heads/main/list/Ai/Gemini.list",
-            "Gemini",
-            "AI",
-            True,
-        ),
-        (
-            "https://raw.githubusercontent.com/Hexon-X/Hex-Clash/refs/heads/main/list/Ai/OpenAI.list",
-            "OpenAI",
-            "AI",
-            True,
-        ),
-        (
-            "https://raw.githubusercontent.com/hippowu2021/CmccBannedList/refs/heads/main/CmccBannedList.list",
-            "CmccBannedList",
-            "",
-            False,
-        ),
-    ]
+    # 任务清单（从配置文件读取）
+    tasks = []
+    for t in config.get("tasks", []):
+        tasks.append(
+            (
+                t["source_url"],
+                t["name"],
+                t.get("sub_dir", ""),
+                t.get("save_list", False),
+            )
+        )
+
+    if not tasks:
+        print("警告: 配置文件中未定义任何任务。")
+        return
 
     updated_flag = False
     for url, name, sub, sl in tasks:
