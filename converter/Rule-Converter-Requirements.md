@@ -4,7 +4,7 @@
 | --- | --- |
 | **版本编号** | **V0.06 (Configurable Tasks)** |
 | **项目名称** | Rule-Converter |
-| **主要目标** | 自动化规则抓取、格式转换、多路径分发、全量 Git 同步及网络超时控制 |
+| **主要目标** | 自动化规则抓取、格式转换、多路径分发、全量 Git 同步、网络超时控制及任务结果汇总 |
 | **运行环境** | Python 3.10+, Windows 10/11, Git for Windows |
 
 ---
@@ -50,6 +50,7 @@ Root Dir (根目录)
 | **Git操作** | 执行Git命令和同步（支持代理+超时） | `run_git_command()` |
 | **任务处理** | 规则转换核心逻辑（支持代理下载+超时） | `process_task()` |
 | **超时控制** | 为HEAD/GET/Git命令设置独立超时阈值 | `config.json` -> `timeout` |
+| **结果汇总** | 统计成功/跳过/失败任务并输出汇总报告 | `main()` |
 | **主流程** | 协调各模块执行 | `main()` |
 
 ### 2.3 数据流程图
@@ -252,6 +253,8 @@ if updated_flag:
 - [x] 全局代理支持（urllib + Git）
 - [x] 网络超时控制（HEAD/GET/Git 独立配置）
 - [x] 超时异常分类处理（socket.timeout / URLError）
+- [x] 任务列表外置化（config.json tasks 数组）
+- [x] 任务结果汇总报告（成功/跳过/失败统计）
 
 ### 5.2 待改进项目
 
@@ -269,7 +272,7 @@ if updated_flag:
 
 | 需求版本 | 实现版本 | 功能匹配度 | 状态 |
 | --- | --- | --- | --- |
-| V0.06 (Configurable Tasks) | V0.06 (代码中) | 100% | 任务列表已外置至配置文件 |
+| V0.06 (Configurable Tasks) | V0.06 (代码中) | 100% | 任务外置+结果汇总+state判空修复 |
 
 ---
 
